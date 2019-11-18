@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpaceStation.Models\SpaceStation.Models.csproj" />
+    <ProjectReference Include="..\SpaceStation.Repository\SpaceStation.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
