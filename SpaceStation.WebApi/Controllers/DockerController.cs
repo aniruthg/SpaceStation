@@ -17,6 +17,7 @@ namespace SpaceStation.WebApi.Controllers
     public class DockerController : Controller
     {
         private readonly IShuttleSpecifications _shuttleSpecifications;
+        
         public DockerController(IShuttleSpecifications shuttleSpecifications)
         {
             _shuttleSpecifications = shuttleSpecifications;

@@ -57,7 +57,7 @@ namespace SpaceStation.DataAccess.Sql_Mapping_Models
 
         private bool CompareValues(double standardValue, double comparedValue)
         {
-            return Math.Abs(standardValue - comparedValue) < 0;
+            return Math.Abs(standardValue - comparedValue) <= 0;
         }
 
         private Shuttle GetShuttle(SpaceStation.Models.Shuttle shuttle)

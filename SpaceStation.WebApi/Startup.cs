@@ -33,6 +33,7 @@ namespace SpaceStation.WebApi
             services.AddControllers();
             InitRepo(services);
             services.AddTransient<IShuttleSpecifications, ShuttleSpecifications>();
+           
         }
 
 
