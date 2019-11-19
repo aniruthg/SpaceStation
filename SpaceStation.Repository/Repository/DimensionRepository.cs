@@ -14,7 +14,8 @@ namespace SpaceStation.Repository.Repository
         public DimensionRepository(SpaceContext spaceContext)
         {
             _spaceContext = spaceContext;
-            LoadDimension();
+            LoadShuttleDimension();
+            LoadLabDimension();
         }
 
         public Dimension GetDimension(string dimensionId)
@@ -34,7 +35,7 @@ namespace SpaceStation.Repository.Repository
             return result > 0;
         }
 
-        private async void LoadDimension()
+        private async void LoadShuttleDimension()
         {
             var exists = GetDimensions().FirstOrDefault(x => x.Type == "Shuttle");
             if (exists == null)
@@ -47,6 +48,25 @@ namespace SpaceStation.Repository.Repository
                     Length = 35,
                     Width = 35,
                     Type = "Shuttle"
+                };
+
+                await AddDimension(dimension);
+            }
+        }
+
+        private async void LoadLabDimension()
+        {
+            var exists = GetDimensions().FirstOrDefault(x => x.Type == "Lab");
+            if (exists == null)
+            {
+                var dimension = new Dimension
+                {
+                    Diameter = 50,
+                    DimensionId = "2",
+                    Height = 35,
+                    Length = 35,
+                    Width = 35,
+                    Type = "Lab"
                 };
 
                 await AddDimension(dimension);

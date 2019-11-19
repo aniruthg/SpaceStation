@@ -33,7 +33,7 @@ namespace SpaceStation.WebApi
             services.AddControllers();
             InitRepo(services);
             services.AddTransient<IShuttleSpecifications, ShuttleSpecifications>();
-           
+            services.AddTransient<ILabSpecification, LabSpecification>();
         }
 
 
@@ -43,6 +43,7 @@ namespace SpaceStation.WebApi
             services.AddDbContext<SpaceContext>(options => options.UseInMemoryDatabase("SpaceStation"));
             services.AddScoped<IDockRepository, DockRepository>();
             services.AddScoped<IDimensionRepository, DimensionRepository>();
+            services.AddScoped<ILabRepository, LabRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

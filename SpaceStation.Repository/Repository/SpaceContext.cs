@@ -12,6 +12,8 @@ namespace SpaceStation.Repository.Repository
 
         public DbSet<Dimension> Dimensions { get; set; }
 
+        public DbSet<Lab> Labs { get; set; }
+
         public SpaceContext(DbContextOptions<SpaceContext> options) : base(options)
         {
 
